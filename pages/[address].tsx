@@ -72,16 +72,22 @@ export default function DAOPage() {
           </a>
           <p>fully diluited mkt cap: <span className=" font-medium">${info?.fully_diluted_mkt_cap}</span></p>
           <p>price token: <span className=" font-medium">${info?.price_token}</span></p>
-          <p>total holders: <span className=" font-medium">{info?.holders.total}</span></p>
+          <p>total holders: <span className=" font-medium">{info?.holders?.total}</span></p>
 
         </div>
           {
             info && (
               <HolderChart
-                data={info.holders.top_50}
+                data={info.holders?.top_50}
               />
             )
           }
+        <div className="flex flex-1 max-h-screen py-2">
+          <div className="flex flex-col items-center border h-36 justify-around rounded-xl p-2 bg-blue-100 gap-2">
+            <p className="text-xl">Token Concentration</p>
+            <p className="text-xl font-semibold">{info?.token_concentration}</p>
+          </div>
+        </div>
       </div>
     </div>
 

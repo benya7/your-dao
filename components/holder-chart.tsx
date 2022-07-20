@@ -46,7 +46,7 @@ export default function HolderChart({ data }: { data: any }) {
   const onPieEnter = (_: any, index: any) => setActiveIndex(index);
 
   return (
-    <div className="flex flex-col flex-1 w-full h-3/4 items-center pt-10">
+    <div className="flex flex-col flex-1 w-full h-3/4 items-center pt-10 border-b">
       <p className="text-xl underline">
         Top 50 Holder's Token
       </p>

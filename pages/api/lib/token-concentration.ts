@@ -39,6 +39,6 @@ export default function tokenConcentration(items: any[], price: number) {
   const abc = 0.5 - aul
   const gini = abc / 0.5
 
-  return gini;
+  return `${gini.toFixed(2)}%`
 
 }
