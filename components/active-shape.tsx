@@ -18,11 +18,11 @@ export default function ActiveShape(props: any) {
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+  const sx = cx + (outerRadius + 5) * cos;
+  const sy = cy + (outerRadius + 5) * sin;
+  const mx = cx + (outerRadius + 15) * cos;
+  const my = cy + (outerRadius + 15) * sin;
+  const ex = mx + (cos >= 0 ? 1 : -1);
   const ey = my;
   const textAnchor = cos >= 0 ? "start" : "end";
 
@@ -43,7 +43,7 @@ export default function ActiveShape(props: any) {
         startAngle={startAngle}
         endAngle={endAngle}
         innerRadius={outerRadius + 6}
-        outerRadius={outerRadius + 10}
+        outerRadius={outerRadius + 8}
         fill={fill}
       />
       <path
@@ -57,7 +57,7 @@ export default function ActiveShape(props: any) {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-        style={{ fontWeight: 800 }}
+        className="text-xs font-semibold"
       >
         {payload.address}
       </text>
@@ -67,6 +67,7 @@ export default function ActiveShape(props: any) {
         dy={18}
         textAnchor={textAnchor}
         fill="#333"
+        className="text-sm"
       >
         {value}
       </text>
@@ -76,8 +77,9 @@ export default function ActiveShape(props: any) {
         dy={36}
         textAnchor={textAnchor}
         fill="#999"
+        className="text-sm"
       >
-        {`${(percent * 100).toFixed(2)}%)`}
+        {`(${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
   );

@@ -46,8 +46,11 @@ export default function HolderChart({ data }: { data: any }) {
   const onPieEnter = (_: any, index: any) => setActiveIndex(index);
 
   return (
-    <div className="w-full">
-      <ResponsiveContainer width="100%" aspect={2}>
+    <div className="flex flex-col flex-1 w-full h-3/4 items-center pt-10">
+      <p className="text-xl underline">
+        Top 50 Holder's Token
+      </p>
+      <ResponsiveContainer width="100%" aspect={6}>
         <RePieChart>
           <Pie
             activeIndex={activeIndex}
@@ -55,8 +58,8 @@ export default function HolderChart({ data }: { data: any }) {
             data={topHolders}
             cx="50%"
             cy="50%"
-            innerRadius={30}
-            outerRadius={100}
+            innerRadius={18}
+            outerRadius={72}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={onPieEnter}

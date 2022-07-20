@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { ReactNode } from "react";
+import Search from "./search";
 
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -10,24 +11,23 @@ export default function Layout({ children }: { children: ReactNode }) {
         <title>YourDAO</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <nav className="flex gap-2 justify-around items-center border-b h-16 w-full">
-      <p>asd</p>
-        <p>asd</p>
-
+    <nav className="flex gap-2 justify-between items-center px-8 border-b h-20 w-full">
+      <p className="text-2xl font-bold">YourDAO</p>
+      <Search />
     </nav>
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex flex-col items-center w-full min-h-screen px-8 py-4">
         {children}
       </main>
 
       <footer className="flex h-16 w-full items-center justify-center border-t">
         <a
           className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.covalenthq.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <Image src="/covalent-logo.png" alt="Covalent Logo" width={144} height={72} />
         </a>
       </footer>
     </div>

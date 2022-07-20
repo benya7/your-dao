@@ -2,14 +2,16 @@ import Image from "next/image"
 import Link from "next/link"
 import { DAOScheme } from "../lib/types"
 
-export default function DaoCard({ daoItem}: { daoItem: DAOScheme}) {
+export default function DaoCard({ daoItem }: { daoItem: DAOScheme }) {
   return (
 
-    <div className="w-48 bg-white pt-4 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <Image className="rounded-t-lg" src={daoItem.logo} alt="" height={64} width={64} />
-      </a>
-      <div className="p-5">
+    <div className="flex flex-col items-center  gap-4 py-4 hover:border-gray-800 justify-center w-48 bg-white pt-4 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <Link href={`/${daoItem.contract}`}>
+        <a>
+          <Image className="rounded-t-lg" src={daoItem.logo} alt="" height={64} width={64} />
+        </a>
+      </Link>
+      <div className="flex flex-col items-center">
         <a href="#">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {daoItem.name}
