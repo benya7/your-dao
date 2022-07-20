@@ -51,8 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       fully_diluted_mkt_cap: (Math.round(parseInt(fully_diluted_valuation["usd"]) * 100) / 100).toLocaleString(),
       holders: {
         total: holders.length,
-        top_50: holders.slice(0, 50),
-        info: responseInfo.data
+        top_50: holders.slice(0, 50)
       },
       token_concentration: gini
     })
