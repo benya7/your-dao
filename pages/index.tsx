@@ -6,9 +6,8 @@ import DaoCard from '../components/dao-card'
 import { useDashBoardContext } from '../context/state'
 import { DAOScheme } from '../lib/types'
 
-const Home: NextPage<{daoList: DAOScheme[]}> = (props) => {
+const Home: NextPage = () => {
   const {daoList} = useDashBoardContext()!;
-  //const { msg } = useDashBoardContext();
   return (
     <div className="py-4">
       <p className='text-xl font-semibold my-4'>
@@ -35,23 +34,3 @@ const Home: NextPage<{daoList: DAOScheme[]}> = (props) => {
 }
 
 export default Home
-
-export async function getServerSideProps() {
-
-  const response = await fetch('http://localhost:3000/api/dao/all')
- 
-  const data = await response.json();
-  console.log(data)
-  if (!data) {
-    return { props: {
-      daoList: []
-    }}
-  } else {
-    return {
-      props: {
-        daoList: data
-      }
-    }
-  }
-
-}
